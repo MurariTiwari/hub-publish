@@ -53,6 +53,7 @@ class Auth extends React.Component {
 
   register = () => {
     console.log('on register clicked');
+	/*
     this.showProgressIndicator(true)
     authenticateUser(this.state.username, this.state.password, true).then(authResponse => {
       this.showProgressIndicator(false)
@@ -64,7 +65,40 @@ class Auth extends React.Component {
         this.showAlert(JSON.stringify(authResponse));
       }
     });
-  }
+  */
+
+var url = "https://auth.aster61.hasura-app.io/v1/signup";
+
+var requestOptions = {
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json"
+    }
+};
+
+var body = {
+    "provider": "username",
+    "data": {
+        "username": "empty",
+        "password": "11tiger11"
+    }
+};
+
+requestOptions.body = JSON.stringify(body);
+
+fetch(url, requestOptions)
+.then(function(response) {
+	return response.json();
+})
+.then(function(result) {
+	console.log(result);
+	// To save the auth token received to offline storage
+	// var authToken = result.auth_token
+	// window.localStorage.setItem('HASURA_AUTH_TOKEN', authToken);
+})
+.catch(function(error) {
+	console.log('Request Failed:' + error);
+});}
 
   handleUsernameChange = (e) => {
     this.setState({
