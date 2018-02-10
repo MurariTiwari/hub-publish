@@ -51,13 +51,55 @@ class Login extends React.Component{
 	}
 	check()
 	{
-	  if(this.state.username=='murari' && this.state.password=='tiger11')
+	  /*if(this.state.username=='murari' && this.state.password=='tiger11')
 	  {
 		  this.setState({output:"Loged In successfully",log:true});
 	  }else
       {
 		 this.setState({output:"Credential not correct",log:false}); 
-	  }		  
+	  }	*/	
+
+
+
+var url = "https://auth.aster61.hasura-app.io/v1/login";
+
+var requestOptions = {
+    "method": "POST",
+    "headers": {
+        "Content-Type": "application/json"
+    }
+};
+
+var body = {
+    "provider": "username",
+    "data": {
+        "username": this.state.username,
+        "password": this.state.password
+    }
+};
+
+requestOptions.body = JSON.stringify(body);
+
+fetch(url, requestOptions)
+.then(function(response) {
+	return response.json();
+})
+.then(function(result) {
+	console.log(result);
+	// To save the auth token received to offline storage
+	 var authToken = result.auth_token
+	 window.localStorage.setItem('HASURA_AUTH_TOKEN', authToken);
+})
+.catch(function(error) {
+	console.log('Request Failed:' + error);
+});
+
+
+
+
+
+
+	  
 	}
 render(){
 	
