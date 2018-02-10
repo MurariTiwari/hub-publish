@@ -33,7 +33,7 @@ class Login extends React.Component{
 			log:false
 		}
 	}
-	mF(authToken)
+	function mF(authToken)
 	{
 		if(authToken)
 {this.setState({output:"Loged In successfully",log:true});}
