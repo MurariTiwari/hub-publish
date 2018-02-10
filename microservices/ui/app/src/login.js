@@ -147,7 +147,7 @@ return	(
 	<br/><span style={{textAlign:'center'}}>{this.state.output}</span>
 	<br/>
 	<p style={{margin:10}}>
-	/ Enter user name as murari  and password tiger11 for demo  /
+	/ Enter user name as ram  and password 11tiger11 for demo  /
 	</p>
 	
 	</Paper>
