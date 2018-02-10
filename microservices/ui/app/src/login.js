@@ -38,7 +38,7 @@ class Login extends React.Component{
 		if(authToken)
 {this.setState({output:"Loged In successfully",log:true});}
 else{this.setState({output:"Credential not correct",log:false});}	  
-	}
+	
 	}
 	update()
 	{
@@ -94,7 +94,7 @@ fetch(url, requestOptions)
 	console.log('Request Failed:' + error);
 });
 
-
+	}
 render(){
 	
 	if(!this.state.log)
