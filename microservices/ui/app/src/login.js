@@ -49,6 +49,7 @@ class Login extends React.Component{
   document.getElementById('root')
 );	
 	}
+
 	check()
 	{
 	  
@@ -78,6 +79,7 @@ fetch(url, requestOptions)
 	return response.json();
 })
 .then(function(result) {
+	console.log(result);
 	if(result.auth_token)
 	  {
 		  this.setState({output:"Loged In successfully",log:true});
