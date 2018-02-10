@@ -33,7 +33,7 @@ class Login extends React.Component{
 			log:false
 		}
 	}
-	function mF(authToken)
+	function mf(authToken)
 	{
 		if(authToken)
 {this.setState({output:"Loged In successfully",log:true});}
@@ -88,7 +88,7 @@ fetch(url, requestOptions)
 	console.log(result);
 		  authToken = result.auth_token
 	     window.localStorage.setItem('HASURA_AUTH_TOKEN', authToken);
-		 mF(authToken);
+		 mf(authToken);
 })
 .catch(function(error) {
 	console.log('Request Failed:' + error);
