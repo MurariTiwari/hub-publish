@@ -82,12 +82,12 @@ fetch(url, requestOptions)
 	console.log(result);
 	if(result.auth_token)
 	  {
-		  this.setState({output:"Loged In successfully",log:true});
+		  //this.setState({output:"Loged In successfully",log:true});
 		  var authToken = result.auth_token
 	     window.localStorage.setItem('HASURA_AUTH_TOKEN', authToken);
 	  }else
       {
-		 this.setState({output:"Credential not correct",log:false}); 
+		// this.setState({output:"Credential not correct",log:false}); 
 	  }
 
 })
