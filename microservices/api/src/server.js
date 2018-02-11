@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var request = require('request');
+const paypal=require('paypal-rest-sdk');
 var router = express.Router();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
@@ -11,6 +12,12 @@ var hasuraExamplesRouter = require('./hasuraExamples');
 var server = require('http').Server(app);
 
 router.use(morgan('dev'));
+
+paypal.configure({
+  'mode': 'sandbox', //sandbox or live
+  'client_id': 'AVaZDhoqRKcVAba32E5Vfq5U3MQHLujm2Op7fm6cy5zFDQNnEy4e7PLH9wT6KjNVo4McxU2KENTizxst',
+  'client_secret': 'ELYC5AoKGX4ixLs0hEhDJFf9rskQszlM4CDQi29mYLPP3LWRbCoCLwglqyH_d_yJKtFm5fKRkglePXOz'
+});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
