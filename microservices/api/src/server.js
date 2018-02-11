@@ -21,7 +21,7 @@ app.use('/', hasuraExamplesRouter);
 
 
 
-app.post("/pay",(req,res)=>{
+app.get("/pay",(req,res)=>{
 	
 	const create_payment_json = {
     "intent": "sale",
