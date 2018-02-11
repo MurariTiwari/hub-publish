@@ -36,8 +36,8 @@ app.get("/pay",(req,res)=>{
         "payment_method": "paypal"
     },
     "redirect_urls": {
-        "return_url": "https://ui.aster61.hasura-app.io/success",
-        "cancel_url": "https://ui.aster61.hasura-app.io/cancel"
+        "return_url": "https://api.aster61.hasura-app.io/success",
+        "cancel_url": "https://api.aster61.hasura-app.io/cancel"
     },
     "transactions": [{
         "item_list": {
