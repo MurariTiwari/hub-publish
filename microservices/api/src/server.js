@@ -101,7 +101,7 @@ app.get('/success',(req,res)=>{
 			throw error;
 		}else{
 			console.log(JSON.stringify(payment));
-			res.send('sucess');
+			res.render('<h1>Transaction Successful   </h1><a href="https://api.aster61.hasura-app.io">Click here to continue</a>');
 		}
 		
 	});
